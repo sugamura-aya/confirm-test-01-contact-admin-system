@@ -1,0 +1,276 @@
+/*入力・確認・Thanksページ共通*/
+body {
+    color: #BCB09C;
+}
+
+
+/*入力ページ*/
+h1 {
+    text-align: center;
+    font-family: "Libertinus Math", system-ui;
+}
+
+form {
+    padding: 0 80px;
+    border-radius: 8px;
+    margin: 0 150px;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.form-table th,
+.form-table td {
+    padding: 12px;
+    vertical-align: top;
+}
+
+.form-table th {
+    text-align: left;
+
+}
+
+label {
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: #BCB09C;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.name-fields {
+    display: flex;
+    gap: 15px;
+}
+
+.name-fields input {
+    width: 50%;
+}
+
+.tel-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.tel-field {
+    flex: 1;
+    /* 均等に3分割 */
+    display: flex;
+    flex-direction: column;
+    /* inputの下にエラーメッセージ */
+}
+
+.tel-field input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 4px;
+}
+
+.tel-fields input {
+    width: 100%;
+    max-width: 150px;
+}
+
+/* 性別のラジオボタンカスタマイズ */
+input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #BCB09C;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+    position: relative;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* 選択時に塗りつぶし */
+input[type="radio"]:checked {
+    background-color: #BCB09C;
+}
+
+/* ラベルとラジオボタンの横並び用調整 */
+label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+
+select[name="category_id"] {
+    width: 50%;
+    /* 適度な幅に調整（例：50%や200pxなど） */
+    min-width: 200px;
+}
+
+
+/*確認ページ*/
+.title{
+    text-align: center;
+    font-family: "Libertinus Math", system-ui;
+}
+
+.confirm-table{
+    display: flex;
+}
+
+.confirm-table__inner{
+    margin: 0 300px;
+    width: 100%;
+    margin-bottom: 50px;
+    table-layout: auto;
+    
+}
+
+.confirm-table__content{
+    line-height:4; 
+    width: 300px;
+    border: 1px solid #F5F5F5;
+    background-color: #BCB09C;
+    color: #F5F5F5;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.confirm-table__answer{
+    border: 1px solid #BCB09C;
+    padding-left: 25px;
+}
+
+.confirm-form__button{
+    display: flex;
+    justify-content: center;
+  
+}
+
+.send-button{
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+.send-button-submit{
+    width: 120px;
+    background-color: #8B7E74;
+}
+
+.correction-button{
+    margin-left: 5px;
+    padding-left: 5px;
+}
+
+.correction-button-submit{
+    width: 120px;
+    background: none;
+    color: #BCB09C;
+    text-decoration-line: underline;
+}
+
+
+/*Thanksページ*/
+.thanks {
+    position: relative;
+    display: flex;
+    /* フレックスボックスを有効化 */
+    flex-direction: column;
+    justify-content: center;
+    /* 水平方向の中央寄せ */
+    align-items: center;
+    /* 垂直方向の中央寄せ */
+    margin: 250px 0;
+    /* 上下に50pxのマージンを設定 */
+}
+
+.thanks-message {
+    font-size: 25px;
+    margin-top: 18px;
+}
+
+.thanks::after {
+    content: 'Thank you';
+    position: absolute;
+    top: 50%;
+    /* 垂直方向の中央寄せ */
+    left: 50%;
+    /* 水平方向の中央寄せ */
+    transform: translate(-50%, -50%);
+    /* 中央に配置 */
+    font-size: 200px;
+    /* 背景テキストのフォントサイズ */
+    color: rgba(209, 201, 173, 0.3);
+    /* 背景テキストの色（透明度含む） */
+    z-index: -1;
+    /* 背景として配置 */
+    white-space: nowrap;
+    /* テキストの折り返し防止 */ 
+    font-family: "Libertinus Math", system-ui;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #8B7E74;
+    color: white;
+    text-decoration: none;
+    font-family: "Libertinus Math", system-ui;
+}
+
+.home-button:hover {
+    background-color: #333;
+ }

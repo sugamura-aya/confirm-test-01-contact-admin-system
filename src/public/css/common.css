@@ -1,0 +1,24 @@
+/* 全体の最大幅・中央寄せ */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ヘッダー */
+header {
+    color: #BCB09C;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    border-bottom: 5px solid #DCDCDC;
+    font-family: "Libertinus Math", system-ui;
+}
+
+/* メインコンテンツエリア */
+main {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-height: 400px;
+    /* お好みで調整 */ }
