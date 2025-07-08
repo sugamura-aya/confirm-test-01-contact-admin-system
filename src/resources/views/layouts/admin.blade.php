@@ -20,12 +20,25 @@
 
 <body>
     <header class="header">
-        <div class="header__inner">Fashionably Late
-            {{--<a href="/" class="header__logo">user</a>--}}
-        </div>
+        <div class="header__inner">Fashionably Late</div>
+
+        <nav class="header__nav">
+            {{--ルートに名前を付けて利用できるようにすること--}}
+            @if (Route::currentRouteName() === 'login')
+                <a class="nav__item" href="{{ route('register') }}">Register</a>
+            @elseif (Route::currentRouteName() === 'register')
+                <a class="nav__item" href="{{ route('login') }}">Login</a>
+            @elseif (Auth::check())
+                <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                @csrf
+                <button class="nav__item" type="submit">Logout</button>
+                </form>
+            @endif
+        </nav>
+
     </header>
 
-    <main>
+    <main class="login">
     {{--各ページに @yield ディレクティブを記述--}}
     @yield('content')
     </main>

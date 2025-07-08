@@ -5,6 +5,12 @@
     padding: 0 15px;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0; 
+}
+
 /* ヘッダー */
 header {
     color: #BCB09C;
@@ -14,6 +20,8 @@ header {
     font-weight: bold;
     border-bottom: 5px solid #DCDCDC;
     font-family: "Libertinus Math", system-ui;
+
+    position: relative;
 }
 
 /* メインコンテンツエリア */
@@ -21,4 +29,26 @@ main {
     margin-top: 30px;
     margin-bottom: 30px;
     min-height: 400px;
-    /* お好みで調整 */ }
+    /* お好みで調整 */ 
+}
+
+
+/*管理者用システムの各ボタン*/
+.header__nav{
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    font-size: 25px;
+
+    position: absolute;
+    bottom: 50px;
+    right: 20px
+
+}
+
+.nav__item{
+    border: 2px solid #BCB09C;
+    color: #BCB09C;
+    background-color:#EAEAEA    ;
+    padding: 0 30px;
+}

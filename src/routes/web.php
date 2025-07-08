@@ -34,15 +34,12 @@ Route::get('/admin/export', [AdminController::class, 'export']);
 /*モーダルウィンドウ内　削除設定*/
 Route::delete('/admin/{id}', [AdminController::class, 'destroy']);
 
-
-Route::get('/test-view', function () {
-    // 仮に categories データを用意（無ければエラーになるので）
-    $categories = collect([
-        (object)['id' => 1, 'content' => 'お問い合わせ種類1'],
-        (object)['id' => 2, 'content' => 'お問い合わせ種類2'],
-    ]);
-
-    return view('contact.index', compact('categories'));
+/*➄ユーザー登録ページ、➅ログインページ*/
+/* 認証済みユーザーのみアクセスできるグループ*/
+Route::middleware('auth')->group(function () {
+    /* ➃管理画面（トップページ） */
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
+
 
 

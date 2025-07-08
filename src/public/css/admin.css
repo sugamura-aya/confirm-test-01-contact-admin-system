@@ -1,0 +1,88 @@
+body {
+    color: #BCB09C;
+}
+
+.auth-page {
+    background-color: #F5EFE6;
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.auth-title {
+    text-align: center;
+    font-family: "Libertinus Math", system-ui;
+    margin-top: 10px;
+}
+
+.auth-form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding-bottom: 300px;
+    width: 100%;
+}
+
+.auth-form__content {
+    width: 600px;
+    margin: 0 auto;
+    padding:40px 100px 100px 100px;
+    background-color: white;
+}
+
+.content {
+    width: 300px;
+    margin-bottom: 50px;
+    display: inline;
+    justify-items: center;
+    padding: 10px 50px;
+}
+
+.content-name {
+    margin-bottom: 0;
+}
+
+.content-item {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+}
+
+.content-item::placeholder {
+    color: #B9B9B9;
+}
+
+.auth__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.auth__button-submit {
+    padding: 10px 30px;
+    font-size: 1rem;
+    background-color: #BCB09C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 5px;
+}
+
+
