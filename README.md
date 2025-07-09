@@ -10,20 +10,21 @@
    `docker-compose exec php bash`
 4. パッケージインストール  
    `composer install`
-5. user: "1000:1000".env.example` を `.env` にコピーして、以下の内容に変更  
+5. .env.exampleを.envにコピーして、以下の内容に変更  
    ```env
    DB_HOST=mysql  
    DB_DATABASE=laravel_db  
    DB_USERNAME=laravel_user  
    DB_PASSWORD=laravel_pass
 6. docker-compose.yml ファイル内の php: に以下を追記
-   ` user: "1000:1000"`
-7. アプリキーの生成
-   php artisan key:generate
-8. マイグレーション実行
-   php artisan migrate
-9. ダミーデータ投入（ファクトリ使用）
-    php artisan db:seed
+   ```yaml
+   user: "1000:1000"
+8. アプリキーの生成  
+   `php artisan key:generate`
+9. マイグレーション実行  
+   `php artisan migrate`
+10. ダミーデータ投入（ファクトリ使用）  
+    `php artisan db:seed`
 
 ## 使用技術・実行環境
 このアプリケーションは Laravel と Docker を用いて構築しています。
