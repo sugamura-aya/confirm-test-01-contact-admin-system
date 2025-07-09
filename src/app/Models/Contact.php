@@ -31,4 +31,50 @@ class Contact extends Model
         /*「$this(Contactモデル)はCategoryモデルに属する」*/
         return $this->belongsTo(Category::class);
     }
+
+    /*氏名の結合*/
+    public function full_name()
+    {
+        return $this->last_name . ' ' . $this->first_name;
+    }
+
+    /*以下ローカルスコープ*/
+    public function scopeNameSearch($query, $name)
+    {
+        if (!empty($name)) {
+            $query->where(function ($q) use ($name) {
+                $q->where('first_name', 'like', "%$name%")
+                  ->orWhere('last_name', 'like', "%$name%")
+                  ->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$name}%"]);
+            });
+        }
+    }
+
+    public function scopeEmailSearch($query, $email)
+    {
+        if (!empty($email)) {
+            $query->where('email', 'like', "%$email%");
+        }
+    }
+
+    public function scopeGenderSearch($query, $gender)
+    {
+        if (!empty($gender)) {
+            $query->where('gender', $gender);
+        }
+    }
+
+    public function scopeCategorySearch($query, $category_id)
+    {
+        if (!empty($category_id)) {
+            $query->where('category_id', $category_id);
+        }
+    }
+
+    public function scopeDateSearch($query, $date)
+    {
+        if (!empty($date)) {
+            $query->whereDate('created_at', $date);
+        }
+    }
 }

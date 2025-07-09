@@ -26,13 +26,15 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 Route::post('/thanks',[ContactController::class,'store']);
 
 /*➃管理画面*/
-Route::get('/admin',[AdminController::class,'index']);
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
+
+Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
 
 /*CSVエクスポート設定*/
-Route::get('/admin/export', [AdminController::class, 'export']);
+Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');
 
 /*モーダルウィンドウ内　削除設定*/
-Route::delete('/admin/{id}', [AdminController::class, 'destroy']);
+Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
 /*➄ユーザー登録ページ、➅ログインページ*/
 /* 認証済みユーザーのみアクセスできるグループ*/
@@ -40,6 +42,8 @@ Route::middleware('auth')->group(function () {
     /* ➃管理画面（トップページ） */
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });
+
+
 
 
 
