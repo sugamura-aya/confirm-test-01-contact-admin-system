@@ -11,11 +11,12 @@
   {{--common.css(共通するCSSコードをまとめたCSSファイル)を呼び出し--}}
   <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
   {{--管理者用システムのCSSファイル呼び出し--}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">{{--ページネーションの表示調整のため導入--}}
   <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
   {{--webフォント--}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,6 +43,10 @@
     {{--各ページに @yield ディレクティブを記述--}}
     @yield('content')
     </main>
+
+    {{--index.blade.php に記述した @section('scripts')を埋め込む場所として、下記を記述--}}
+    @yield('scripts')
+
 
 </body>
 

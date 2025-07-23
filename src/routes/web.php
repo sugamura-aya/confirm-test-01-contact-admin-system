@@ -28,7 +28,8 @@ Route::post('/thanks',[ContactController::class,'store']);
 /*➃管理画面*/
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 
-Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');
+/*実装までに至らなかった「モーダルウィンドウ」用のHTMLを用意したため、表示確認のため設定したルーティング。モーダルウィンドウ実装には不要のため、コメントアウト*/ 
+/*Route::get('/admin/{id}', [AdminController::class, 'show'])->name('admin.show');*/
 
 /*CSVエクスポート設定*/
 Route::get('/admin/export', [AdminController::class, 'export'])->name('admin.export');

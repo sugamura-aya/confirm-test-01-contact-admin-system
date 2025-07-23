@@ -224,20 +224,40 @@ svg.w-5.h-5 {
 }
 
 
-/*モーダルウィンドウ*/
-.modal-content{
-    margin: 20px 70px;
+/*モーダルウィンドウ（JavaScript）*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
-.modal-close-btn{
-    display: flex;
-    justify-content: right;
-    margin-right: 180px;
+.modal-content {
+    background-color: white;
+    padding: 32px;
+    border-radius: 12px;
+    width: 500px;
+    /* 固定幅で中央感強調 */
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* ふんわり影 */
+    position: relative;
 }
 
-.modal-close-btn-submit{
-    width: 30px;
-    height: 30px;
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 12px;
+        width: 30px;
+        height: 30px;
     color: #BCB09C;
     border: 2px solid #BCB09C;
     /* 枠の調整 */
@@ -247,29 +267,23 @@ svg.w-5.h-5 {
     /* ボタンの背景色 */
 }
 
-.modal-close-btn-submit:hover {
+.modal-close:hover {
     background-color: #BCB09C;
     color: #fff;
     transition: 0.3s;
 }
 
-.modal-table{
-    margin: 0 auto;
-    width: 50%;
-    color:#BCB09C ;
+.modal-content p {
+    margin: 12px 0;
 }
 
-.modal-th{
-    font-weight: bold;
-}
-
-.modal-delete-form{
+.modal-delete-form {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
-.modal-delete-btn{
+.modal-delete-btn {
     padding: 5px 18px;
     border: none;
     background-color: red;
@@ -279,3 +293,16 @@ svg.w-5.h-5 {
     display: inline-flex;
 }
 
+.modal-table {
+    margin: 0 auto;
+    width: 90%;
+    color: #BCB09C;
+    /*テーブルセルの間に間隔をあける*/
+    border-collapse: separate;
+    border-spacing: 18px;
+}
+
+.modal-th {
+    font-weight: bold;
+    width: 35%;
+}

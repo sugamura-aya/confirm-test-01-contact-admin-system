@@ -29,16 +29,20 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        /*新規ユーザの登録処理*/
         $this->app->bind(CreatesNewUsers::class, CreateNewUser::class);
 
+        /*GETメソッドで/registerにアクセスしたときに表示するviewファイル*/
         Fortify::registerView(function () {
                 return view('auth.register');
         });
 
+        /*	GETメソッドで/loginにアクセスしたときに表示するviewファイル*/
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
+        /*login処理の実行回数を1分あたり10回までに制限*/
         RateLimiter::for('login', function (Request $request) {
             $email = (string) $request->email;
 

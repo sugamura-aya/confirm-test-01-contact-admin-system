@@ -29,8 +29,8 @@
       <th>性別<span class="required">※</span></th>
       <td>
         <label><input type="radio" name="gender" value="1" {{ old('gender', '1') == '1' ? 'checked' : '' }}>男性</label>
-        <label><input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>女性</label>
-        <label><input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>その他</label>
+        <label><input type="radio" name="gender" value="2" {{ old('gender', '1') == '2' ? 'checked' : '' }}>女性</label>
+        <label><input type="radio" name="gender" value="3" {{ old('gender', '1') == '3' ? 'checked' : '' }}>その他</label>
         @error('gender')
           <div class="error-message">{{ $message }}</div>
         @enderror

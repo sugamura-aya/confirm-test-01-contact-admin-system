@@ -56,7 +56,7 @@ class ContactController extends Controller
         /*confirmメソッドにて、セッションの中に 'contact_data' という名前で保存していた変数を利用し、$contactDataという変数に置き換えて取得*/
         $contactData = $request->session()->get('contact_data');
     
-        /*Contact::create($contactData);←一時的にコメントアウト！（画面遷移確認のため、DBに保存されないように）*/
+        Contact::create($contactData);/*←一時的にコメントアウト！（画面遷移確認のため、DBに保存されないように）*/
     
         /* セッション削除（完了後)*/
         $request->session()->forget('contact_data');

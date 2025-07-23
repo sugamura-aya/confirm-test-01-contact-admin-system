@@ -38,6 +38,15 @@ class Contact extends Model
         return $this->last_name . ' ' . $this->first_name;
     }
 
+
+    /*詳細ページでハイフン付きで結合した電話番号を表示*/
+    /*viewファイルには<p>電話番号：{{ $contact->formatted_tel() }}</p>のように記述*/
+    public function formatted_tel()
+    {
+        return substr($this->tel, 0, 3) . '-' . substr($this->tel, 3, 4) . '-' . substr($this->tel, 7);
+    }
+
+
     /*以下ローカルスコープ*/
     public function scopeNameSearch($query, $name)
     {
