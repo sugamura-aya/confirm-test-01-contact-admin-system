@@ -32,6 +32,11 @@
                 <div class="error-message">{{ $message }}</div>
             @enderror
 
+            <div class="content">
+                <p class="content-name">パスワード確認</p>
+                <input type="password" name="password_confirmation" class="content-item" placeholder="もう一度入力してください">
+            </div>
+
             <div class="auth__button">
                 <button class="auth__button-submit" type="submit">登録</button>
             </div>
