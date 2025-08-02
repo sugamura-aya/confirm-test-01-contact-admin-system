@@ -115,7 +115,7 @@
     <tr>
       <th>お問い合わせ内容<span class="required">※</span></th>
       <td>
-        <textarea name="detail" placeholder="お問い合わせ内容をご記入ください" maxlength="120">{{ old('detail') }}</textarea>
+        <textarea name="detail" placeholder="お問い合わせ内容をご記入ください">{{ old('detail') }}</textarea>
         @error('detail')
           <div class="error-message">{{ $message }}</div>
         @enderror

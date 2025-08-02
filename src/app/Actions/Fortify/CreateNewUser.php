@@ -28,7 +28,8 @@ class CreateNewUser implements CreatesNewUsers
                 'max:255',
                 Rule::unique(User::class),
             ],
-            'password' => $this->passwordRules(),
+            // 'confirmed' を除外（確認欄がないので）
+            'password' =>  ['required', 'string', 'min:8'],
         ])->validate();
 
         return User::create([

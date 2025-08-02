@@ -129,9 +129,17 @@ return [
     |
     */
 
-    'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+    /*認証についてのバリデーションメッセージのカスタマイズ*/
+   'custom' => [
+        'name' => [
+            'required' => 'お名前を入力してください',
+        ],
+        'email' => [
+            'required' => 'メールアドレスを入力してください',
+            'email' => 'メールアドレスは「ユーザー名@ドメイン」形式で入力してください',
+        ],
+        'password' => [
+            'required' => 'パスワードを入力してください',
         ],
     ],
 
