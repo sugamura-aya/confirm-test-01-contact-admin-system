@@ -13,10 +13,10 @@
         <select name="gender" class="search-item search-gender">
             <option value="">性別</option>
             {{--「検索実行したあと、選んだ値（性別やカテゴリ）を再度選ばれた状態にしておく」--}}
-            <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>すべて</option>
-            <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>男性</option>
-            <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>女性</option>
-            <option value="4" {{ request('gender') == '4' ? 'selected' : '' }}>その他</option>
+            <option value="">すべて</option>
+            <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
+            <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
+            <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
         </select>
 
         {{--お問合せ種類検索セレクトボックス--}}
@@ -43,6 +43,11 @@
 
 <div class="export-pagination">
     <form action="/admin/export" method="get">
+        {{--検索条件も一緒に hidden で渡すようにする--}}
+        <input type="hidden" name="name" value="{{ request('name') }}">
+        <input type="hidden" name="gender" value="{{ request('gender') }}">
+        <input type="hidden" name="category_id" value="{{ request('category_id') }}">
+        <input type="hidden" name="date" value="{{ request('date') }}">
         <button class="export-btn btn btn-primary">エクスポート</button>
     </form>
     

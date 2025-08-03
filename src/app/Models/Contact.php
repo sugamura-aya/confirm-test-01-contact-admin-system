@@ -54,17 +54,18 @@ class Contact extends Model
             $query->where(function ($q) use ($name) {
                 $q->where('first_name', 'like', "%$name%")
                   ->orWhere('last_name', 'like', "%$name%")
-                  ->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$name}%"]);
+                  ->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$name}%"])
+                  ->orWhere('email', 'like', "%{$name}%"); //←名前のローカルスコープにemailのローカルスコープを追加。
             });
         }
     }
 
-    public function scopeEmailSearch($query, $email)
+    /*public function scopeEmailSearch($query, $email)
     {
         if (!empty($email)) {
             $query->where('email', 'like', "%$email%");
         }
-    }
+    }  名前のローカルスコープに組み込んだため、メールのローカルスコープは不要に。*/
 
     public function scopeGenderSearch($query, $gender)
     {

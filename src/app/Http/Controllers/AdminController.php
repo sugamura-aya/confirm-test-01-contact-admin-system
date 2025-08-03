@@ -18,12 +18,12 @@ class AdminController extends Controller
 
         // 検索条件ごとにローカルスコープ適用
         $query->nameSearch($request->name)
-              ->emailSearch($request->email)
+              /*->emailSearch($request->email) ←メールは名前のローカルスコープに組み込んだため削除*/
               ->genderSearch($request->gender)
               ->categorySearch($request->category_id)
               ->dateSearch($request->date);
 
-        $contacts = $query->paginate(7); // ページネーション：7件ずつ
+        $contacts = $query->paginate(7)->withQueryString(); // ページネーション：7件ずつ＋ページ移動時も検索条件を保持
         $categories = Category::all();   // セレクトボックス用
 
         return view('admin.index', compact('contacts', 'categories'));
@@ -36,7 +36,7 @@ class AdminController extends Controller
 
         // indexと同じように検索条件を適用
         $query->nameSearch($request->name)
-              ->emailSearch($request->email)
+              /*->emailSearch($request->email)　←メールは名前のローカルスコープに組み込んだため削除*/
               ->genderSearch($request->gender)
               ->categorySearch($request->category_id)
               ->dateSearch($request->date);
